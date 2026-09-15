@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dr. Haina Fatima — researcher and writer on AI, markets, and technology. An index of publications, code, and platforms.">
+<title>Dr. Haina Fatima</title>
+<meta name="msvalidate.01" content="F94456B63E92F9CD783FE80662C08C9B" />
+<meta name="google-site-verification" content="UEQzkf3Byzwg0K1-bnnDMtXKUjmJrwLPQ8GYIjqBcDU" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#132033;
+    --ink-deep:#0b1520;
+    --parchment:#f2ead9;
+    --parchment-dim:#cfc4ab;
+    --gold:#b78a4f;
+    --teal:#5f8f84;
+    --rule:rgba(242,234,217,0.16);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at 15% -10%, rgba(183,138,79,0.10), transparent 45%),
+      radial-gradient(ellipse at 90% 10%, rgba(95,143,132,0.08), transparent 40%),
+      var(--ink);
+    color:var(--parchment);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:5.5rem 1.5rem 4rem;
+  }
+  header{
+    margin-bottom:3.2rem;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 0.9rem;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(2.4rem, 6vw, 3.6rem);
+    line-height:1.02;
+    margin:0 0 1rem;
+    letter-spacing:-0.01em;
+  }
+  h1 em{
+    font-style:italic;
+    font-weight:400;
+    color:var(--parchment-dim);
+  }
+  .bio{
+    max-width:52ch;
+    font-size:1.02rem;
+    line-height:1.65;
+    color:var(--parchment-dim);
+    margin:0;
+  }
+  .bio strong{color:var(--parchment); font-weight:500;}
+
+  .section-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--teal);
+    margin:0 0 0.75rem;
+    padding-top:2.4rem;
+    border-top:1px solid var(--rule);
+  }
+  .section-label:first-of-type{border-top:none; padding-top:0;}
+
+  ul.ledger{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  ul.ledger li{
+    border-bottom:1px solid var(--rule);
+  }
+  ul.ledger li:first-child a{padding-top:0.2rem;}
+
+  ul.ledger a{
+    display:flex;
+    align-items:baseline;
+    gap:1rem;
+    padding:0.95rem 0;
+    text-decoration:none;
+    color:inherit;
+    transition:transform 0.18s ease, color 0.18s ease;
+  }
+  ul.ledger a:hover{
+    transform:translateX(6px);
+    color:var(--gold);
+  }
+  ul.ledger a:hover .num{color:var(--gold);}
+  ul.ledger a:hover .arrow{opacity:1; transform:translateX(0);}
+
+  .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--parchment-dim);
+    min-width:1.6rem;
+    transition:color 0.18s ease;
+  }
+  .label-block{
+    flex:1;
+    min-width:0;
+  }
+  .platform{
+    font-family:'Fraunces', serif;
+    font-size:1.18rem;
+    font-weight:500;
+    display:block;
+  }
+  .desc{
+    font-family:'Inter', sans-serif;
+    font-size:0.86rem;
+    color:var(--parchment-dim);
+    display:block;
+    margin-top:0.15rem;
+  }
+  .arrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.9rem;
+    opacity:0;
+    transform:translateX(-4px);
+    transition:all 0.18s ease;
+    color:var(--gold);
+  }
+  .status{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.65rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--parchment-dim);
+    border:1px solid var(--rule);
+    border-radius:2px;
+    padding:0.15rem 0.4rem;
+    white-space:nowrap;
+  }
+
+  footer{
+    margin-top:3.5rem;
+    padding-top:1.6rem;
+    border-top:1px solid var(--rule);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    color:var(--parchment-dim);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:0.5rem;
+  }
+
+  @media (max-width:520px){
+    .wrap{padding:3.5rem 1.25rem 3rem;}
+    .platform{font-size:1.05rem;}
+    .desc{font-size:0.82rem;}
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--gold);
+    outline-offset:3px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; scroll-behavior:auto !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Updated 2026</p>
+    <h1>Dr. Haina<br><em>Fatima</em></h1>
+    <p class="bio">Writer and researcher covering <strong>AI adoption</strong>, <strong>markets</strong>, and <strong>emerging technology</strong>. This page is a running index of where the work is published and where the code lives.</p>
+  </header>
+
+  <p class="section-label">Writing</p>
+  <ul class="ledger">
+    <li>
+      <a href="https://plainenglish.io/business/challenges-of-ai-adoption-for-growing-businesses" target="_blank" rel="noopener">
+        <span class="num">01</span>
+        <span class="label-block">
+          <span class="platform">Cubed / Plain English</span>
+          <span class="desc">Essay — challenges of AI adoption for growing businesses</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://drhaina.medium.com/" target="_blank" rel="noopener">
+        <span class="num">02</span>
+        <span class="label-block">
+          <span class="platform">Medium</span>
+          <span class="desc">Essays and short fiction</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://substack.com/@drhainafatima" target="_blank" rel="noopener">
+        <span class="num">03</span>
+        <span class="label-block">
+          <span class="platform">Substack</span>
+          <span class="desc">Newsletter</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://app.hackernoon.com/profile" target="_blank" rel="noopener">
+        <span class="num">04</span>
+        <span class="label-block">
+          <span class="platform">HackerNoon</span>
+          <span class="desc">Tech commentary</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://app.paragraph.com/dr-haina-fatima/inbox" target="_blank" rel="noopener">
+        <span class="num">05</span>
+        <span class="label-block">
+          <span class="platform">Paragraph</span>
+          <span class="desc">On-chain publishing</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://reletter.com/publications/dr-haina" target="_blank" rel="noopener">
+        <span class="num">06</span>
+        <span class="label-block">
+          <span class="platform">Reletter</span>
+          <span class="desc">Publication archive</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://hashnode.com/@drhaina" target="_blank" rel="noopener">
+        <span class="num">07</span>
+        <span class="label-block">
+          <span class="platform">Hashnode</span>
+          <span class="desc">Technical writing</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" onclick="return false;" aria-disabled="true">
+        <span class="num">08</span>
+        <span class="label-block">
+          <span class="platform">Steemit</span>
+          <span class="desc">Blockchain blogging, crypto rewards</span>
+        </span>
+        <span class="status">no account yet</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://telegra.ph/XINI8-The-People-and-Ideas-Building-a-New-Digital-Ecosystem-09-15" target="_blank" rel="noopener">
+        <span class="num">09</span>
+        <span class="label-block">
+          <span class="platform">Telegra.ph</span>
+          <span class="desc">XINI8 — The People and Ideas Building a New Digital Ecosystem</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.pubpub.org/user/dr-haina-fatima" target="_blank" rel="noopener">
+        <span class="num">10</span>
+        <span class="label-block">
+          <span class="platform">PubPub</span>
+          <span class="desc">Research &amp; knowledge publishing</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://teletype.in/@drhainafatima" target="_blank" rel="noopener">
+        <span class="num">11</span>
+        <span class="label-block">
+          <span class="platform">Teletype</span>
+          <span class="desc">Quick-publish blog</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://drhainafatima.bearblog.dev" target="_blank" rel="noopener">
+        <span class="num">12</span>
+        <span class="label-block">
+          <span class="platform">Bear Blog</span>
+          <span class="desc">Minimal, fast blogging</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://write.as/pad" target="_blank" rel="noopener">
+        <span class="num">13</span>
+        <span class="label-block">
+          <span class="platform">Write.as</span>
+          <span class="desc">Minimalist writing</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" onclick="return false;" aria-disabled="true">
+        <span class="num">14</span>
+        <span class="label-block">
+          <span class="platform">Contently</span>
+          <span class="desc">Writer portfolio</span>
+        </span>
+        <span class="status">need public link</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" onclick="return false;" aria-disabled="true">
+        <span class="num">15</span>
+        <span class="label-block">
+          <span class="platform">Minds</span>
+          <span class="desc">Open social publishing</span>
+        </span>
+        <span class="status">need public link</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" onclick="return false;" aria-disabled="true">
+        <span class="num">16</span>
+        <span class="label-block">
+          <span class="platform">Publish0x</span>
+          <span class="desc">Crypto/tech writing</span>
+        </span>
+        <span class="status">pending</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" onclick="return false;" aria-disabled="true">
+        <span class="num">17</span>
+        <span class="label-block">
+          <span class="platform">Quora</span>
+          <span class="desc">Q&amp;A + Spaces</span>
+        </span>
+        <span class="status">need public link</span>
+      </a>
+    </li>
+  </ul>
+
+  <p class="section-label">Press Releases</p>
+  <ul class="ledger">
+    <li>
+      <a href="https://www.prlog.org/13157681-xini8-solves-the-creator-economys-biggest-problem-the-gap-between-vision-and-infrastructure.html" target="_blank" rel="noopener">
+        <span class="num">18</span>
+        <span class="label-block">
+          <span class="platform">PRLog — XINI8</span>
+          <span class="desc">Jul 11, 2026 · DA 78, dofollow — strongest free SEO value</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.prlog.org/13164157-xini8-marks-the-expansion-of-its-ecosystem-with-the-launch-of-xini8-experience.html" target="_blank" rel="noopener">
+        <span class="num">19</span>
+        <span class="label-block">
+          <span class="platform">PRLog — XINI8 Experience</span>
+          <span class="desc">Aug 12, 2026 · DA 78, dofollow</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.prlog.org/13164646-xini8-launches-magzinix-new-digital-media-platform-covering-web3-film-and-emerging-technology.html" target="_blank" rel="noopener">
+        <span class="num">20</span>
+        <span class="label-block">
+          <span class="platform">PRLog — Magzinix</span>
+          <span class="desc">Aug 14, 2026 · DA 78, dofollow</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.openpr.com/news/4579007/xini8-unveils-its-connected-ecosystem-to-transform-the-global" target="_blank" rel="noopener">
+        <span class="num">21</span>
+        <span class="label-block">
+          <span class="platform">OpenPR — XINI8</span>
+          <span class="desc">Jul 17, 2026 · DA 71, fast indexing</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://news.prfree.org/@drhainafatima0/can-one-ai-platform-replace-your-entire-business-software-stack-meet-xinigo-xq6l80gzbme9" target="_blank" rel="noopener">
+        <span class="num">22</span>
+        <span class="label-block">
+          <span class="platform">PRFree — Xinigo</span>
+          <span class="desc">Jul 13, 2026 · DA 46, dofollow</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://news.prfree.org/@drhainafatima0/flinix-introduces-ai-powered-streaming-discovery-to-help-viewers-find-the-perfect-content-faster-30hpwxj2ux1l" target="_blank" rel="noopener">
+        <span class="num">23</span>
+        <span class="label-block">
+          <span class="platform">PRFree — Flinix</span>
+          <span class="desc">Jul 20, 2026 · DA 46, dofollow</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://news.prfree.org/@drhainafatima0/qinix-goes-live-with-an-ai-powered-compliance-workflow-platform-for-igaming-operators-n15colp9o327" target="_blank" rel="noopener">
+        <span class="num">24</span>
+        <span class="label-block">
+          <span class="platform">PRFree — Qinix</span>
+          <span class="desc">DA 46, dofollow</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://news.prfree.org/@drhainafatima0/xini8-launches-magzinix-a-new-digital-magazine-exploring-the-future-of-technology-business-science-media-and-human-innovation-b3qpqpptw466" target="_blank" rel="noopener">
+        <span class="num">25</span>
+        <span class="label-block">
+          <span class="platform">PRFree — Magzinix</span>
+          <span class="desc">DA 46, dofollow</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://freepressrelease.io/press/xini8-launches-ai-business-operating-system-to-streamline-business-automation" target="_blank" rel="noopener">
+        <span class="num">26</span>
+        <span class="label-block">
+          <span class="platform">Free Press Release — XINI8</span>
+          <span class="desc">Jul 11, 2026 · standard free distribution</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://submitpr.org/press-release/xinigo-highlights-the-shift-from-marketing-automation-to-ai-growth-infrastructure" target="_blank" rel="noopener">
+        <span class="num">27</span>
+        <span class="label-block">
+          <span class="platform">SubmitPR — Xinigo</span>
+          <span class="desc">Jul 20, 2026 · smaller network</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://submitpr.org/press-release/xini8-marks-the-expansion-of-its-ecosystem-with-the-launch-of-xini8-experience" target="_blank" rel="noopener">
+        <span class="num">28</span>
+        <span class="label-block">
+          <span class="platform">SubmitPR — XINI8 Experience</span>
+          <span class="desc">Smaller network</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://submitpr.org/press-release/qinix-introduces-a-platform-designed-to-streamline-compliance-and-marketing-workflows-for-igaming-operators" target="_blank" rel="noopener">
+        <span class="num">29</span>
+        <span class="label-block">
+          <span class="platform">SubmitPR — Qinix</span>
+          <span class="desc">Smaller network</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://app.submitpressrelease.org/pressroom/xini8-announces-an-ai-powered-media-operating-system-that-helps-creators-build-protect-and-commercialize-intellectual-property" target="_blank" rel="noopener">
+        <span class="num">30</span>
+        <span class="label-block">
+          <span class="platform">SubmitPressRelease — XINI8</span>
+          <span class="desc">Jul 23, 2026 · smaller network</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.1888pressrelease.com/user-manage-pr.php?prid=768898" target="_blank" rel="noopener">
+        <span class="num">31</span>
+        <span class="label-block">
+          <span class="platform">1888PressRelease — XINI8</span>
+          <span class="desc">Jul 10, 2026 · robots-blocked, manage link</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.1888pressrelease.com/user-manage-pr.php?prid=769958" target="_blank" rel="noopener">
+        <span class="num">32</span>
+        <span class="label-block">
+          <span class="platform">1888PressRelease — XINI8</span>
+          <span class="desc">Robots-blocked, manage link</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://news.newswirebiz.com/@drhainafatima/xini8-engine-advances-ai-software-development-with-an-agent-native-software-factory-architecture-5sfmbqan7pyb" target="_blank" rel="noopener">
+        <span class="num">33</span>
+        <span class="label-block">
+          <span class="platform">NewsWireBiz — XINI8 Engine</span>
+          <span class="desc">Smaller network</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/posts/xini8-engine_xini8-xini8engine-aiengineering-activity-7492125463985811456-zvqV" target="_blank" rel="noopener">
+        <span class="num">34</span>
+        <span class="label-block">
+          <span class="platform">LinkedIn — XINI8 Engine</span>
+          <span class="desc">Company post, high platform authority</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+  </ul>
+
+  <p class="section-label">Code &amp; Builds</p>
+  <ul class="ledger">
+    <li>
+      <a href="https://github.com/drhainafatima/Haina-Index" target="_blank" rel="noopener">
+        <span class="num">35</span>
+        <span class="label-block">
+          <span class="platform">GitHub</span>
+          <span class="desc">Repositories and experiments</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://vercel.com/haina10" target="_blank" rel="noopener">
+        <span class="num">36</span>
+        <span class="label-block">
+          <span class="platform">Vercel</span>
+          <span class="desc">Deployed projects</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://supabase.com/dashboard/project/svdwcwkztucjjcajupxu" target="_blank" rel="noopener">
+        <span class="num">37</span>
+        <span class="label-block">
+          <span class="platform">Supabase</span>
+          <span class="desc">Database &amp; backend</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+  </ul>
+
+  <p class="section-label">Markets &amp; Networks</p>
+  <ul class="ledger">
+    <li>
+      <a href="https://www.tradingview.com/pricing/" target="_blank" rel="noopener">
+        <span class="num">38</span>
+        <span class="label-block">
+          <span class="platform">TradingView</span>
+          <span class="desc">Charts and market notes</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.crunchbase.com/home" target="_blank" rel="noopener">
+        <span class="num">39</span>
+        <span class="label-block">
+          <span class="platform">Crunchbase</span>
+          <span class="desc">Company &amp; startup profile</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" onclick="return false;" aria-disabled="true">
+        <span class="num">40</span>
+        <span class="label-block">
+          <span class="platform">Binance Square</span>
+          <span class="desc">ID: fuqi</span>
+        </span>
+        <span class="status">no link yet</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://sosovalue.com" target="_blank" rel="noopener">
+        <span class="num">41</span>
+        <span class="label-block">
+          <span class="platform">SoSoValue</span>
+          <span class="desc">Crypto market data &amp; analytics</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+  </ul>
+
+  <p class="section-label">Elsewhere</p>
+  <ul class="ledger">
+    <li>
+      <a href="https://www.linkedin.com/in/dr-haina-fatima-440986290/" target="_blank" rel="noopener">
+        <span class="num">42</span>
+        <span class="label-block">
+          <span class="platform">LinkedIn</span>
+          <span class="desc">Professional profile</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" onclick="return false;" aria-disabled="true">
+        <span class="num">43</span>
+        <span class="label-block">
+          <span class="platform">Twitter / X</span>
+          <span class="desc">@voltradoc</span>
+        </span>
+        <span class="status">handle only</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://buyers.circuit.ooo/onboarding" target="_blank" rel="noopener">
+        <span class="num">44</span>
+        <span class="label-block">
+          <span class="platform">Circuit</span>
+          <span class="desc">Onboarding</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" onclick="return false;" aria-disabled="true">
+        <span class="num">45</span>
+        <span class="label-block">
+          <span class="platform">Bluesky</span>
+          <span class="desc">Pending</span>
+        </span>
+        <span class="status">coming soon</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" onclick="return false;" aria-disabled="true">
+        <span class="num">46</span>
+        <span class="label-block">
+          <span class="platform">Farcaster</span>
+          <span class="desc">Pending</span>
+        </span>
+        <span class="status">coming soon</span>
+      </a>
+    </li>
+  </ul>
+
+  <footer>
+    <span>Dr. Haina Fatima</span>
+    <span>Index maintained by hand</span>
+  </footer>
+
+</div>
+</body>
+</html>
